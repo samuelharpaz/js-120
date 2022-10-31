@@ -141,16 +141,9 @@ const RPSGame = {
     const gameName = Object.values(this.CHOICES).map(capitalize).join(', ');
 
     prompt(`Welcome to ${gameName}!`);
-    console.log('------------------------------------------------------');
-    prompt('Press Enter to continue...');
-    rl.question();
-  },
-
-  displayGameBegin() {
-    console.clear();
     prompt(`First to win ${this.NUM_ROUNDS} rounds wins the game`);
-    console.log('-----------------------------------------');
-    prompt('Press Enter to begin game...');
+    console.log('------------------------------------------------------');
+    prompt('Press Enter to begin...');
     rl.question();
   },
 
@@ -315,7 +308,6 @@ const RPSGame = {
     this.displayWelcomeMessage();
 
     while (true) {
-      this.displayGameBegin();
       this.computer.resetWeights(this.CHOICES);
       this.playGame();
       this.calcGameWinner();
